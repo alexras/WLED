@@ -149,10 +149,9 @@ def parsePostResp(resp, data) {
 
 def synchronize(data){
     logDebug "Synchronizing status: ${data.seg[settings.ledSegment?.toInteger() ?: 0]}}"
-    seg = data.seg[settings.ledSegment?.toInteger() ?: 0]
     
     // Power
-    if(seg.on){
+    if(seg.on) {
         if(device.currentValue("switch") != "on")
             sendEvent(name: "switch", value: "on")
     }
