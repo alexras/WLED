@@ -165,12 +165,12 @@ def synchronize(data){
 
 // Switch Capabilities
 def on() {
-    sendEthernetPost("/json/state","{\"on\":true, \"seg\": [{\"id\": ${ledSegment}, \"on\":true}]}")  
+    sendEthernetPost("/json/state","{\"on\":true}")  
     sendEvent(name: "switch", value: "on")
 }
 
 def off() {
-    sendEthernetPost("/json/state","{\"on\":true, \"seg\": [{\"id\": ${ledSegment}, \"on\":false}]}")    
+    sendEthernetPost("/json/state","{\"on\":false}")    
     sendEvent(name: "switch", value: "off")
 }
 
